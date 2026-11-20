@@ -14,10 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font:
-    16px/1.65 "Manrope",
-    system-ui,
-    sans-serif;
+  font: 16px/1.65 system-ui, sans-serif;
   color: var(--text);
   background: #f5f9fc;
 }
@@ -25,7 +22,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Manrope", system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
   color: var(--ink);
   line-height: 1.15;
 }
@@ -62,9 +59,7 @@ img {
   padding: 14px 24px;
   border-radius: 6px;
   font:
-    700 15px/1.4 "Manrope",
-    system-ui,
-    sans-serif;
+    700 15px/1.4 system-ui, sans-serif;
   text-align: center;
   text-decoration: none;
   border: 0;
@@ -126,9 +121,7 @@ header.main .wrap {
   align-items: center;
   gap: 10px;
   font:
-    800 1.5rem "Manrope",
-    system-ui,
-    sans-serif;
+    800 1.5rem system-ui, sans-serif;
   color: var(--ink);
   text-decoration: none;
   margin-right: auto;
@@ -141,17 +134,18 @@ header.main .wrap {
 .logo b {
   color: var(--gold);
 }
-nav {
+header.main nav {
+  position: relative;
   display: flex;
   gap: 24px;
   align-items: center;
 }
-nav a {
+header.main nav a {
   text-decoration: none;
   font-weight: 600;
 }
-nav a:hover,
-nav a.on {
+header.main nav a:hover,
+header.main nav a.on {
   color: var(--gold);
 }
 .search {
@@ -160,6 +154,51 @@ nav a.on {
   padding: 0.45em 0.8em;
   font: inherit;
   width: 140px;
+}
+.search-results {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 25;
+  width: min(360px, calc(100vw - 40px));
+  max-height: 60vh;
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid #dce5ed;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 24, 72, 0.16);
+}
+.search-results[hidden] {
+  display: none;
+}
+.search-results ul {
+  padding: 0;
+  list-style: none;
+}
+.search-results a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.search-results a:hover,
+.search-results a:focus-visible {
+  background: var(--cream);
+  color: var(--gold);
+}
+.search-results p {
+  padding: 8px 10px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
 .burger {
   display: none;
@@ -235,9 +274,7 @@ nav a.on {
   background: var(--ink);
   color: #fff;
   font:
-    700 18px "Manrope",
-    system-ui,
-    sans-serif;
+    700 18px system-ui, sans-serif;
   cursor: pointer;
   transition:
     background-color 300ms ease,
@@ -258,30 +295,37 @@ nav a.on {
   color: #fff;
   font-size: clamp(2rem, 5vw, 3.2rem);
 }
-.banner small {
-  color: var(--gold);
-}
-.banner .breadcrumb {
-  display: inline-flex;
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 12px;
+  padding: 12px 20px;
+  background: var(--ink);
   color: #dce5ed;
   font-size: 0.95rem;
 }
-.banner .breadcrumb a {
+.breadcrumbs a {
   color: inherit;
   text-decoration: none;
   transition: color 200ms ease;
 }
-.banner .breadcrumb a:hover,
-.banner .breadcrumb a:focus-visible {
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
   color: var(--gold);
 }
-.banner .breadcrumb a:focus-visible {
+.breadcrumbs a:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 4px;
   border-radius: 2px;
+}
+.breadcrumbs [aria-current="page"] {
+  color: var(--gold);
+}
+.banner .breadcrumbs {
+  padding: 0;
+  background: none;
+  margin-top: 12px;
 }
 .grid {
   display: grid;
@@ -307,6 +351,49 @@ nav a.on {
   color: var(--gold);
   font-weight: 700;
   text-decoration: none;
+}
+.card[data-long-description] [data-service-description] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.card .more {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.service-dialog {
+  width: min(600px, calc(100% - 32px));
+  max-height: min(80vh, 700px);
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #e1eaf2;
+  border-radius: 10px;
+  color: var(--text);
+  box-shadow: 0 18px 60px rgba(0, 24, 72, 0.3);
+}
+.service-dialog::backdrop {
+  background: rgba(0, 16, 47, 0.72);
+}
+.service-dialog h2 {
+  padding-right: 36px;
+}
+.service-dialog p {
+  white-space: pre-line;
+}
+.service-dialog-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 700 1.8rem/1 system-ui, sans-serif;
+  cursor: pointer;
 }
 .vm .box {
   padding: 34px;
@@ -449,9 +536,7 @@ nav a.on {
 .stat strong {
   display: block;
   font:
-    800 3rem "Manrope",
-    system-ui,
-    sans-serif;
+    800 3rem system-ui, sans-serif;
   color: var(--gold);
 }
 .step {
@@ -555,10 +640,17 @@ footer .copy {
   .search {
     display: none;
   }
+  header.main nav.open .search {
+    display: block;
+  }
+  header.main nav.open .search-results {
+    left: 0;
+    width: 100%;
+  }
   .burger {
     display: block;
   }
-  nav {
+  header.main nav {
     display: none;
     position: absolute;
     top: 76px;
@@ -570,7 +662,7 @@ footer .copy {
     gap: 16px;
     border-top: 1px solid #dce5ed;
   }
-  nav.open {
+  header.main nav.open {
     display: flex;
   }
   .sec {

@@ -1,0 +1,177 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check repository state",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				"--branch"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Review requested file changes",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--",
+				"css/style.css",
+				"js/script.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect JavaScript diff",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--color=never",
+				"--unified=2",
+				"--",
+				"js/script.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Summarize script diff",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--ignore-space-at-eol",
+				"--stat",
+				"--",
+				"js/script.js",
+				"css/style.css"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stage style and script updates",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"css/style.css",
+				"js/script.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Commit style and script updates",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"commit",
+				"-m",
+				"Update website styling and scripts",
+				"-m",
+				"Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Push styling and script changes",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"push",
+				"origin",
+				"main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Fetch latest GitHub changes",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"fetch",
+				"origin"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check branch divergence",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				"--branch"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect remote commits",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"log",
+				"--oneline",
+				"--decorate",
+				"--graph",
+				"--max-count=8",
+				"--all"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Review remote change files",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--stat",
+				"f564702..origin/main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Review remote commit summary",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"show",
+				"--stat",
+				"--oneline",
+				"--summary",
+				"origin/main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare local and remote script",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--stat",
+				"HEAD",
+				"origin/main",
+				"--",
+				"js/script.js",
+				"css/style.css"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

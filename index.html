@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Home | ODM Ville Int</title>
     <link rel="icon" type="image/webp" href="images/odm-ville-logo.webp" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <section class="slider">
       <div class="slide on">
         <div class="ph">
-          <img src="images/hero-1.jpg" alt="" onerror="this.remove()" />
+          <img
+            data-priority
+            data-src="images/hero-1.jpg"
+            alt=""
+            onerror="this.remove()"
+          />
         </div>
         <div class="txt">
           <h1>Welcome to ODM Ville Int</h1>
@@ -28,7 +28,7 @@
       </div>
       <div class="slide">
         <div class="ph">
-          <img src="images/hero-2.jpg" alt="" onerror="this.remove()" />
+          <img data-src="images/hero-2.jpg" alt="" onerror="this.remove()" />
         </div>
         <div class="txt">
           <h1>Brand and Promotion</h1>
@@ -38,7 +38,7 @@
       </div>
       <div class="slide">
         <div class="ph">
-          <img src="images/hero-3.jpg" alt="" onerror="this.remove()" />
+          <img data-src="images/hero-3.jpg" alt="" onerror="this.remove()" />
         </div>
         <div class="txt">
           <h1>Artist Management</h1>
@@ -82,13 +82,14 @@
     <section class="sec">
       <div class="wrap split">
         <div class="ph">
-          <img src="images/about.jpg" alt="" onerror="this.remove()" />
+          <img data-src="images/about.jpg" alt="" onerror="this.remove()" />
         </div>
         <div>
           <h2>About Us</h2>
           <p>
-            Add a short introduction to ODM Ville Int here: who you are, what
-            you do and who you work with.
+            ODM VILLE INT is a marketing and brand communications agency helping
+            businesses, organizations and individuals increase visibility,
+            connect with the right audiences and achieve meaningful growth.
           </p>
           <div class="bar" data-v="90">
             <span>Management and Talent<em>90%</em></span
@@ -113,20 +114,40 @@
         <h2>Featured Gallery</h2>
         <div class="featured-gallery">
           <figure class="gallery-card">
-            <img src="images/featured/bite2.jpeg" alt="Bite brand feature" />
-            <figcaption><span>Bite</span><small>Brand Feature</small></figcaption>
+            <img
+              data-src="images/featured/bite2.jpeg"
+              alt="Bite brand feature"
+            />
+            <figcaption>
+              <span>Bite</span><small>Brand Feature</small>
+            </figcaption>
           </figure>
           <figure class="gallery-card">
-            <img src="images/featured/iyan22.jpg" alt="Ile-Iyan campaign feature" />
-            <figcaption><span>Ile-Iyan</span><small>Campaign Feature</small></figcaption>
+            <img
+              data-src="images/featured/iyan22.jpg"
+              alt="Ile-Iyan campaign feature"
+            />
+            <figcaption>
+              <span>Ile-Iyan</span><small>Campaign Feature</small>
+            </figcaption>
           </figure>
           <figure class="gallery-card">
-            <img src="images/featured/indomine2.jpeg" alt="Indomine brand feature" />
-            <figcaption><span>Indomine</span><small>Brand Feature</small></figcaption>
+            <img
+              data-src="images/featured/indomine2.jpeg"
+              alt="Indomine brand feature"
+            />
+            <figcaption>
+              <span>Indomine</span><small>Brand Feature</small>
+            </figcaption>
           </figure>
           <figure class="gallery-card">
-            <img src="images/featured/airtel2.png" alt="Airtel brand feature" />
-            <figcaption><span>Airtel</span><small>Brand Feature</small></figcaption>
+            <img
+              data-src="images/featured/airtel2.png"
+              alt="Airtel brand feature"
+            />
+            <figcaption>
+              <span>Airtel</span><small>Brand Feature</small>
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -134,28 +155,28 @@
     <section class="sec alt">
       <div class="wrap split">
         <div>
-          <h2>Artist Management</h2>
-          <p>Add a description of your artist management service here.</p>
+          <h2>Digital Marketing</h2>
+          <p>
+            Reach the people who matter with targeted campaigns across Facebook,
+            Instagram, TikTok, X, Google and YouTube, supported by campaign
+            planning, audience targeting and performance monitoring.
+          </p>
           <div class="bar" data-v="70">
-            <span>Artist Growth<em>70%</em></span
+            <span>Digital Strategy<em>70%</em></span
             ><i><b></b></i>
           </div>
           <div class="bar" data-v="80">
-            <span>Event Management<em>80%</em></span
+            <span>Content Creation<em>80%</em></span
             ><i><b></b></i>
           </div>
           <div class="bar" data-v="90">
-            <span>A&R Management<em>90%</em></span
+            <span>Analytics<em>90%</em></span
             ><i><b></b></i>
           </div>
-          <a class="btn" href="services.html#artist-management">Learn More</a>
+          <a class="btn" href="services.html#digital-advertising">Learn More</a>
         </div>
         <div class="ph">
-          <img
-            src="images/hero-3.jpg"
-            alt=""
-            onerror="this.remove()"
-          />
+          <img data-src="images/hero-3.jpg" alt="" onerror="this.remove()" />
         </div>
       </div>
     </section>
@@ -166,14 +187,30 @@
           A selection of brands and organizations we have partnered with.
         </p>
         <div class="brand-grid">
-          <div class="brand-logo"><img src="images/partnership/dstv.webp" alt="DStv" /></div>
-          <div class="brand-logo"><img src="images/partnership/ile-iyan.webp" alt="Ile-Iyan" /></div>
-          <div class="brand-logo"><img src="images/partnership/indomine.webp" alt="Indomine" /></div>
-          <div class="brand-logo"><img src="images/partnership/jumia.webp" alt="Jumia" /></div>
-          <div class="brand-logo"><img src="images/partnership/mtn.webp" alt="MTN" /></div>
-          <div class="brand-logo"><img src="images/partnership/nimc.webp" alt="NIMC" /></div>
-          <div class="brand-logo"><img src="images/partnership/wikipedia.webp" alt="Wikipedia" /></div>
-          <div class="brand-logo"><img src="images/partnership/youtube.webp" alt="YouTube" /></div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/dstv.webp" alt="DStv" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/ile-iyan.webp" alt="Ile-Iyan" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/indomine.webp" alt="Indomine" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/jumia.webp" alt="Jumia" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/mtn.webp" alt="MTN" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/nimc.webp" alt="NIMC" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/wikipedia.webp" alt="Wikipedia" />
+          </div>
+          <div class="brand-logo">
+            <img data-src="images/partnership/youtube.webp" alt="YouTube" />
+          </div>
         </div>
       </div>
     </section>
