@@ -1,6 +1,6 @@
 const SITE = {
   name: "ODM Ville Int",
-  phone: "- +234 813 226 3555",
+  phone: "+234 813 226 3555",
   email: "info@odmvilleagency.com",
   addr: "Lagos, Nigeria",
 };
