@@ -24,7 +24,7 @@ function redirect_to_form($type, $status, $return_to)
         'meet-the-ceo.html',
         'services.html',
         'contact-us.html',
-        'appointment.html',
+        'work-with-us.html',
     );
     if (!in_array($return_to, $allowed_pages, true)) {
         $return_to = 'index.html';
@@ -59,9 +59,9 @@ $form_config = array(
         'return_to' => 'contact-us.html',
         'subject' => 'Website contact message',
     ),
-    'appointment' => array(
-        'return_to' => 'appointment.html',
-        'subject' => 'Website appointment request',
+    'work_with_us' => array(
+        'return_to' => 'work-with-us.html',
+        'subject' => 'Website Work With Us request',
     ),
 );
 

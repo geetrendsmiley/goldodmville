@@ -347,6 +347,14 @@ header.main nav a.on {
 .card .body {
   padding: 22px;
 }
+.card h4 {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 0.95rem;
+}
+.card .body p + p {
+  margin-top: 14px;
+}
 .card .more {
   color: var(--gold);
   font-weight: 700;
@@ -367,6 +375,134 @@ header.main nav a.on {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+}
+
+#selected-campaigns {
+  background: #eef4f8;
+}
+.campaign-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 34px;
+}
+.campaign-heading h2 {
+  margin: 6px 0 0;
+}
+.campaign-heading > p {
+  max-width: 470px;
+  color: #5e6d7d;
+  font-size: 1.05rem;
+}
+.eyebrow,
+.campaign-brand {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+.campaign-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 24, 72, 0.08);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+.campaign-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 44px rgba(0, 24, 72, 0.14);
+}
+.campaign-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--ink);
+}
+.campaign-media img,
+.campaign-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.campaign-media img {
+  transition: transform 500ms ease;
+}
+.campaign-card:hover .campaign-media img {
+  transform: scale(1.035);
+}
+.campaign-media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(transparent, rgba(0, 24, 72, 0.58));
+  pointer-events: none;
+}
+.campaign-video::after {
+  z-index: 1;
+}
+.campaign-type {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(0, 24, 72, 0.72);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+.campaign-card .body {
+  padding: 26px 28px 24px;
+}
+.campaign-card h3 {
+  margin: 7px 0 14px;
+  font-size: 1.35rem;
+}
+.campaign-details p {
+  color: #536274;
+  line-height: 1.58;
+}
+.campaign-details p + p {
+  display: none;
+}
+.campaign-card[data-long-description] [data-service-description] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.campaign-card .more {
+  margin-top: 16px;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+}
+.campaign-card .more::after {
+  content: "→";
+  color: var(--gold);
+  font-size: 1.05rem;
+  transition: transform 200ms ease;
+}
+.campaign-card .more:hover::after {
+  transform: translateX(4px);
 }
 .service-dialog {
   width: min(600px, calc(100% - 32px));
@@ -611,6 +747,41 @@ footer a {
 footer a:hover {
   color: var(--gold);
 }
+footer .social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  border: 1px solid #5a6d8d;
+  border-radius: 50%;
+  color: #fff;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+footer .social-links a:hover,
+footer .social-links a:focus-visible {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  transform: translateY(-2px);
+  outline: none;
+}
+footer .social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
 footer .copy {
   border-top: 1px solid #243b60;
   margin-top: 40px;
@@ -635,6 +806,14 @@ footer .copy {
   .g4,
   .g2,
   .split {
+    grid-template-columns: 1fr;
+  }
+  .campaign-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .campaign-grid {
     grid-template-columns: 1fr;
   }
   .search {

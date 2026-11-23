@@ -1,6 +1,6 @@
 const SITE = {
-  name: "ODM Ville Int",
-  phone: "- +234 813 226 3555",
+  name: "ODM Ville International",
+  phone: "+234 813 226 3555",
   email: "info@odmvilleagency.com",
   addr: "Lagos, Nigeria",
 };
@@ -12,10 +12,10 @@ const SERVICES = [
     true,
   ],
   [
-    "Content Creation and Distribution",
+    "BRAND PROMOTION AND CAMPAIGN MANAGEMENT",
     "content-creation-distribution",
-    "Creating and sharing engaging content across various digital channels.",
-    false,
+    "Brand awareness, product launches and promotional campaigns.. We plan and execute impactful promotional campaigns, product launches and brand activations that connect businesses with their target audiences. Take your brand beyond the screen. We provide creative and promotional solutions that help businesses strengthen their identity and reach consumers in physical spaces..",
+    true,
   ],
   [
     "Digital Advertising",
@@ -41,6 +41,24 @@ const SERVICES = [
     "Get your brand in the spotlight. We help businesses and individuals gain media exposure through strategic publicity and placements across established media platforms. Our services include sponsored news publications, press releases, brand announcements, product launch publicity, online newspaper features, entertainment and lifestyle blog placements, personal brand publicity and media relations.",
     true,
   ],
+  [
+    "Public Relations",
+    "public-relations",
+    "Reputation management, strategic communications and publicity.",
+    true,
+  ],
+  [
+    "Wikipedia & Knowledge Panel",
+    "wikipedia-knowledge-panel",
+    "Wikipedia profile development and Google Knowledge Panel services, subject to eligibility and platform guidelines.",
+    true,
+  ],
+  [
+    "Event & Campaign Activation",
+    "event-campaign-activation",
+    "Product activations, experiential marketing and promotional events.",
+    true,
+  ],
 ];
 const ph = (n) =>
   `<div class="ph"><img data-src="images/${n}" alt="" onerror="this.remove()"></div>`;
@@ -52,7 +70,7 @@ const PAGE_TITLES = {
   "meet-the-ceo.html": "Meet the CEO",
   "services.html": "Services",
   "contact-us.html": "Contact Us",
-  "appointment.html": "Appointment",
+  "work-with-us.html": "Work With Us",
 };
 const L = [
   ["index.html", "Home"],
@@ -80,7 +98,12 @@ const SEARCH_ITEMS = [
   {
     title: "Services",
     href: "services.html",
-    text: "Branding outdoor advertising activation content creation digital advertising influencer marketing social media publicity online PR",
+    text: "Branding outdoor advertising activation content creation digital advertising influencer marketing social media publicity online PR Public Relations Wikipedia Knowledge Panel Event Campaign Activation",
+  },
+  {
+    title: "Selected Campaigns",
+    href: "services.html#selected-campaigns",
+    text: "NIMC National Identity Registration Awareness MTN Make A Difference Rite Foods Bigi Flex BBNaija Big Brother Naija Foodelo Digital Brand Awareness ILE IYAN PODs Influencer Marketing UGC Campaign",
   },
   {
     title: "Contact Us",
@@ -88,9 +111,9 @@ const SEARCH_ITEMS = [
     text: "Contact enquiry Lagos Nigeria email phone project",
   },
   {
-    title: "Appointment",
-    href: "appointment.html",
-    text: "Book consultation artist management A&R talent events branding promotions",
+    title: "Work With Us",
+    href: "work-with-us.html",
+    text: "Work with us consultation artist management A&R talent events branding promotions",
   },
   ...SERVICES.map(([title, id, text]) => ({
     title,
@@ -101,8 +124,8 @@ const SEARCH_ITEMS = [
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<div class="top"><div class="wrap"><span>Open Mon–Sat, 9am–6pm</span><a href="tel:${SITE.phone.replace(/\s/g, "")}">${SITE.phone}</a></div></div>
-<header class="main"><div class="wrap"><a class="logo" href="index.html"><img data-src="images/odm-ville-logo.webp" alt="">ODM <b>Ville</b> Int</a>
-<nav id="nav"><input class="search" type="search" placeholder="Search" aria-label="Search">${L.map((l) => `<a href="${l[0]}" class="${here == l[0] ? "on" : ""}">${l[1]}</a>`).join("")}<a class="btn" href="appointment.html">Appointment</a></nav>
+<header class="main"><div class="wrap"><a class="logo" href="index.html"><img data-src="images/odm-ville-logo.webp" alt="">ODM <b>Ville</b> </a>
+<nav id="nav"><input class="search" type="search" placeholder="Search" aria-label="Search">${L.map((l) => `<a href="${l[0]}" class="${here == l[0] ? "on" : ""}">${l[1]}</a>`).join("")}<a class="btn" href="work-with-us.html">Work With Us</a></nav>
 <button class="burger" aria-label="Menu" onclick="nav.classList.toggle('open')">☰</button></div></header>`,
 );
 const currentPage = PAGE_TITLES[here] || PAGE_TITLES["index.html"];
@@ -178,8 +201,14 @@ document.addEventListener("click", (event) => {
 });
 document.body.insertAdjacentHTML(
   "beforeend",
-  `<section class="cta"><div class="wrap"><h2>Ready to build your brand?</h2><p>Tell us about your brand, artist or project.</p><a class="btn" href="appointment.html">Get Started</a></div></section>
-<footer><div class="wrap grid g4"><div><h4>${SITE.name}</h4><p>Building Brands Through Strategy, Influence and Communication.</p></div>
+  `<section class="cta"><div class="wrap"><h2>Ready to build your brand?</h2><p>Tell us about your brand, artist or project.</p><a class="btn" href="work-with-us.html">Work With Us</a></div></section>
+<footer><div class="wrap grid g4"><div><h4>${SITE.name}</h4><p>Building Brands Through Strategy, Influence and Communication.</p><div class="social-links" aria-label="Social media links">
+<a href="#" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.2 22H3l7.3-8.4L2.8 2h6.5l4.4 5.8L18.9 2Zm-1.1 17.8h1.7L7.4 4.1H5.6l12.2 15.7Z"/></svg></a>
+<a href="#" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 7.9H1.8V22h3.5V7.9ZM3.5 2A2.1 2.1 0 1 0 3.5 6.2 2.1 2.1 0 0 0 3.5 2ZM22 13.8c0-4.2-2.2-6.2-5.2-6.2a4.5 4.5 0 0 0-4.1 2.3V7.9H9.2V22h3.5v-7c0-1.8.3-3.6 2.6-3.6 2.2 0 2.3 2.1 2.3 3.7V22H22v-8.2Z"/></svg></a>
+<a href="#" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 22v-9h3l.5-3.5h-3.5V7.2c0-1 .3-1.7 1.7-1.7h1.9V2.3a25 25 0 0 0-2.7-.1c-2.7 0-4.6 1.7-4.6 4.7v2.6H7V13h3v9h3.7Z"/></svg></a>
+<a href="#" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 2c.3 2.2 1.5 3.6 3.6 3.8v3.3a7 7 0 0 1-3.6-1v7.1a6.2 6.2 0 1 1-5.4-6.2v3.4a2.9 2.9 0 1 0 2.1 2.8V2h3.3Z"/></svg></a>
+<a href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.2-2.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></a>
+</div></div>
 <div><h4>Pages</h4>${L.map((l) => `<a href="${l[0]}">${l[1]}</a>`).join("")}</div>
 <div><h4>Contact</h4><p>${SITE.addr}<br>${SITE.phone}<br>${SITE.email}</p><p>Mon–Sat, 9am–6pm</p></div>
 <div><h4>Newsletter</h4><form id="newsletter-form" action="form-handler.php" method="post"><input type="hidden" name="form_type" value="newsletter"><input type="hidden" name="return_to" value="${returnPage}"><label class="sr-only" for="newsletter-email">Your email</label><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email" required><label class="sr-only" aria-hidden="true" hidden>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label><button class="btn">Subscribe</button></form><p id="newsletter-status" data-form-status="newsletter" role="status" aria-live="polite"></p></div></div>
@@ -194,9 +223,9 @@ const formStatusTarget = {
     "Your newsletter request was sent to ODM Ville.",
   ],
   contact: ["#contact-status", "Your message was sent to ODM Ville."],
-  appointment: [
-    "#appointment-status",
-    "Your appointment request was sent to ODM Ville.",
+  work_with_us: [
+    "#work-with-us-status",
+    "Your Work With Us request was sent to ODM Ville.",
   ],
 }[formStatusType];
 if (formStatusTarget) {
@@ -225,9 +254,13 @@ document.querySelectorAll("[data-services]").forEach((el) => {
 document.querySelectorAll(".card[data-long-description]").forEach((card) => {
   const description = card.querySelector("p");
   if (!description) return;
-  description.dataset.fullDescription = description.textContent
-    .replace(/\s+/g, " ")
-    .trim();
+  const campaignDetails = card.querySelector(".campaign-details");
+  const fullDescription = campaignDetails
+    ? [...campaignDetails.querySelectorAll("p")]
+        .map((paragraph) => paragraph.textContent.replace(/\s+/g, " ").trim())
+        .join("\n\n")
+    : description.textContent.replace(/\s+/g, " ").trim();
+  description.dataset.fullDescription = fullDescription;
   description.setAttribute("data-service-description", "");
   const button = document.createElement("button");
   button.className = "more";
