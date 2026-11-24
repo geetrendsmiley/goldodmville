@@ -12,7 +12,7 @@ const SERVICES = [
     true,
   ],
   [
-    "BRAND PROMOTION AND CAMPAIGN MANAGEMENT",
+    "Brand Promotion and Campaign Management",
     "content-creation-distribution",
     "Brand awareness, product launches and promotional campaigns.. We plan and execute impactful promotional campaigns, product launches and brand activations that connect businesses with their target audiences. Take your brand beyond the screen. We provide creative and promotional solutions that help businesses strengthen their identity and reach consumers in physical spaces..",
     true,
@@ -68,15 +68,15 @@ const PAGE_TITLES = {
   "index.html": "Home",
   "about-us.html": "About Us",
   "meet-the-ceo.html": "Meet the CEO",
-  "services.html": "Services",
+  "services.html": "Portfolio",
   "contact-us.html": "Contact Us",
   "work-with-us.html": "Work With Us",
 };
 const L = [
   ["index.html", "Home"],
+  ["services.html", "Portfolio"],
   ["about-us.html", "About Us"],
   ["meet-the-ceo.html", "Meet the CEO"],
-  ["services.html", "Services"],
   ["contact-us.html", "Contact Us"],
 ];
 const SEARCH_ITEMS = [
@@ -96,9 +96,9 @@ const SEARCH_ITEMS = [
     text: "Samuel Oladimeji Edun digital marketing social media influencer brand communications publicity",
   },
   {
-    title: "Services",
+    title: "Portfolio",
     href: "services.html",
-    text: "Branding outdoor advertising activation content creation digital advertising influencer marketing social media publicity online PR Public Relations Wikipedia Knowledge Panel Event Campaign Activation",
+    text: "Portfolio selected campaigns branding outdoor advertising activation content creation digital advertising influencer marketing social media publicity online PR Public Relations Wikipedia Knowledge Panel Event Campaign Activation",
   },
   {
     title: "Selected Campaigns",
@@ -124,7 +124,7 @@ const SEARCH_ITEMS = [
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<div class="top"><div class="wrap"><span>Open Mon–Sat, 9am–6pm</span><a href="tel:${SITE.phone.replace(/\s/g, "")}">${SITE.phone}</a></div></div>
-<header class="main"><div class="wrap"><a class="logo" href="index.html"><img data-src="images/odm-ville-logo.webp" alt="">ODM <b>Ville</b> </a>
+<header class="main"><div class="wrap"><a class="logo" href="index.html"><img data-src="images/logo22.png" alt="">ODM <b>Ville</b> </a>
 <nav id="nav"><input class="search" type="search" placeholder="Search" aria-label="Search">${L.map((l) => `<a href="${l[0]}" class="${here == l[0] ? "on" : ""}">${l[1]}</a>`).join("")}<a class="btn" href="work-with-us.html">Work With Us</a></nav>
 <button class="burger" aria-label="Menu" onclick="nav.classList.toggle('open')">☰</button></div></header>`,
 );

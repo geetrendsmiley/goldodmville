@@ -61,8 +61,10 @@
 			"command": "git",
 			"args": [
 				"add",
-				"css/style.css",
-				"js/script.js"
+				"--all",
+				"--",
+				".",
+				":(exclude).env"
 			],
 			"isBackground": false,
 			"problemMatcher": []
