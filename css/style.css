@@ -1,9 +1,11 @@
 :root {
-  --ink: #001848;
-  --gold: #0088d8;
-  --cream: #f5f9fc;
-  --mist: #dce5ed;
-  --text: #263445;
+  --ink: #060e21;
+  --gold: #c0872f;
+  --gold-text: #805719;
+  --cream: #e4e0dd;
+  --mist: #d4cec8;
+  --text: #252b35;
+  --white: #ffffff;
   --w: 1160px;
 }
 * {
@@ -14,9 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font: 16px/1.65 system-ui, sans-serif;
+  font:
+    16px/1.65 system-ui,
+    sans-serif;
   color: var(--text);
-  background: #f5f9fc;
+  background: var(--white);
 }
 h1,
 h2,
@@ -55,11 +59,12 @@ img {
 .btn {
   display: inline-block;
   background: var(--ink);
-  color: #fff;
+  color: var(--white);
   padding: 14px 24px;
   border-radius: 6px;
   font:
-    700 15px/1.4 system-ui, sans-serif;
+    700 15px/1.4 system-ui,
+    sans-serif;
   text-align: center;
   text-decoration: none;
   border: 0;
@@ -71,16 +76,16 @@ img {
 }
 .btn:hover {
   background: var(--gold);
-  color: #fff;
+  color: var(--ink);
 }
 .btn.line {
   background: none;
   border: 2px solid var(--gold);
-  color: var(--gold);
+  color: var(--gold-text);
 }
 .ph {
   position: relative;
-  background: linear-gradient(135deg, #0088d8, #001848);
+  background: linear-gradient(135deg, var(--gold), var(--ink));
   overflow: hidden;
   aspect-ratio: 5/4;
 }
@@ -90,10 +95,11 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 5/3; 
 }
 .top {
   background: var(--ink);
-  color: #e8eef5;
+  color: var(--cream);
   font-size: 0.85rem;
   padding: 8px 0;
 }
@@ -104,11 +110,11 @@ img {
   flex-wrap: wrap;
 }
 header.main {
-  background: #fff;
+  background: var(--white);
   position: sticky;
   top: 0;
   z-index: 20;
-  box-shadow: 0 1px 0 #dce5ed;
+  box-shadow: 0 1px 0 var(--mist);
 }
 header.main .wrap {
   display: flex;
@@ -121,7 +127,8 @@ header.main .wrap {
   align-items: center;
   gap: 10px;
   font:
-    800 1.5rem system-ui, sans-serif;
+    800 1.5rem system-ui,
+    sans-serif;
   color: var(--ink);
   text-decoration: none;
   margin-right: auto;
@@ -146,10 +153,10 @@ header.main nav a {
 }
 header.main nav a:hover,
 header.main nav a.on {
-  color: var(--gold);
+  color: var(--gold-text);
 }
 .search {
-  border: 1px solid #dce5ed;
+  border: 1px solid var(--mist);
   border-radius: 6px;
   padding: 0.45em 0.8em;
   font: inherit;
@@ -164,10 +171,10 @@ header.main nav a.on {
   max-height: 60vh;
   overflow: auto;
   padding: 8px;
-  border: 1px solid #dce5ed;
+  border: 1px solid var(--mist);
   border-radius: 6px;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(0, 24, 72, 0.16);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(6, 14, 33, 0.16);
 }
 .search-results[hidden] {
   display: none;
@@ -186,7 +193,7 @@ header.main nav a.on {
 .search-results a:hover,
 .search-results a:focus-visible {
   background: var(--cream);
-  color: var(--gold);
+  color: var(--gold-text);
 }
 .search-results p {
   padding: 8px 10px;
@@ -233,8 +240,8 @@ header.main nav a.on {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 24, 72, 0.88),
-    rgba(0, 24, 72, 0.3)
+    rgba(6, 14, 33, 0.88),
+    rgba(6, 14, 33, 0.3)
   );
 }
 .slide .txt {
@@ -246,13 +253,13 @@ header.main nav a.on {
   justify-content: center;
   align-items: flex-start;
   gap: 18px;
-  color: #fff;
+  color: var(--white);
   max-width: 640px;
   margin-left: max(20px, calc((100vw - var(--w)) / 2 + 20px));
   padding-right: 20px;
 }
 .slide h1 {
-  color: #fff;
+  color: var(--white);
   font-size: clamp(2.2rem, 5.5vw, 4rem);
 }
 .slide p {
@@ -272,9 +279,10 @@ header.main nav a.on {
   border-radius: 50%;
   border: 2px solid var(--gold);
   background: var(--ink);
-  color: #fff;
+  color: var(--white);
   font:
-    700 18px system-ui, sans-serif;
+    700 18px system-ui,
+    sans-serif;
   cursor: pointer;
   transition:
     background-color 300ms ease,
@@ -287,7 +295,7 @@ header.main nav a.on {
 }
 .banner {
   background: var(--ink);
-  color: #fff;
+  color: var(--white);
   padding: 70px 0;
   text-align: center;
 }
@@ -302,7 +310,7 @@ header.main nav a.on {
   gap: 10px;
   padding: 12px 20px;
   background: var(--ink);
-  color: #dce5ed;
+  color: var(--cream);
   font-size: 0.95rem;
 }
 .breadcrumbs a {
@@ -341,22 +349,22 @@ header.main nav a.on {
   grid-template-columns: repeat(4, 1fr);
 }
 .card {
-  background: #fff;
-  border: 1px solid #e1eaf2;
+  background: var(--white);
+  border: 1px solid var(--mist);
 }
 .card .body {
   padding: 22px;
 }
 .card h4 {
   margin: 0 0 14px;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 0.95rem;
 }
 .card .body p + p {
   margin-top: 14px;
 }
 .card .more {
-  color: var(--gold);
+  color: var(--gold-text);
   font-weight: 700;
   text-decoration: none;
 }
@@ -378,7 +386,7 @@ header.main nav a.on {
 }
 
 #selected-campaigns {
-  background: #eef4f8;
+  background: var(--cream);
 }
 .campaign-heading {
   display: flex;
@@ -392,12 +400,12 @@ header.main nav a.on {
 }
 .campaign-heading > p {
   max-width: 470px;
-  color: #5e6d7d;
+  color: #5a5752;
   font-size: 1.05rem;
 }
 .eyebrow,
 .campaign-brand {
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -412,12 +420,14 @@ header.main nav a.on {
   overflow: hidden;
   border: 0;
   border-radius: 12px;
-  box-shadow: 0 12px 36px rgba(0, 24, 72, 0.08);
-  transition: transform 260ms ease, box-shadow 260ms ease;
+  box-shadow: 0 12px 36px rgba(6, 14, 33, 0.08);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
 }
 .campaign-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 44px rgba(0, 24, 72, 0.14);
+  box-shadow: 0 18px 44px rgba(6, 14, 33, 0.14);
 }
 .campaign-media {
   position: relative;
@@ -443,7 +453,7 @@ header.main nav a.on {
   position: absolute;
   inset: auto 0 0;
   height: 38%;
-  background: linear-gradient(transparent, rgba(0, 24, 72, 0.58));
+  background: linear-gradient(transparent, rgba(6, 14, 33, 0.58));
   pointer-events: none;
 }
 .campaign-video::after {
@@ -457,8 +467,8 @@ header.main nav a.on {
   padding: 7px 10px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
-  background: rgba(0, 24, 72, 0.72);
-  color: #fff;
+  background: rgba(6, 14, 33, 0.72);
+  color: var(--white);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -473,7 +483,7 @@ header.main nav a.on {
   font-size: 1.35rem;
 }
 .campaign-details p {
-  color: #536274;
+  color: #5a5752;
   line-height: 1.58;
 }
 .campaign-details p + p {
@@ -509,13 +519,13 @@ header.main nav a.on {
   max-height: min(80vh, 700px);
   margin: auto;
   padding: 30px;
-  border: 1px solid #e1eaf2;
+  border: 1px solid var(--mist);
   border-radius: 10px;
   color: var(--text);
-  box-shadow: 0 18px 60px rgba(0, 24, 72, 0.3);
+  box-shadow: 0 18px 60px rgba(6, 14, 33, 0.3);
 }
 .service-dialog::backdrop {
-  background: rgba(0, 16, 47, 0.72);
+  background: rgba(6, 14, 33, 0.72);
 }
 .service-dialog h2 {
   padding-right: 36px;
@@ -528,7 +538,9 @@ header.main nav a.on {
   border: 0;
   background: none;
   color: var(--ink);
-  font: 700 1.8rem/1 system-ui, sans-serif;
+  font:
+    700 1.8rem/1 system-ui,
+    sans-serif;
   cursor: pointer;
 }
 .vm .box {
@@ -544,10 +556,10 @@ header.main nav a.on {
 }
 .journey-panel {
   padding: clamp(24px, 5vw, 56px);
-  border: 1px solid #e1eaf2;
+  border: 1px solid var(--mist);
   border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 16px 40px rgba(0, 24, 72, 0.06);
+  background: var(--white);
+  box-shadow: 0 16px 40px rgba(6, 14, 33, 0.06);
 }
 .journey-heading {
   display: grid;
@@ -556,7 +568,7 @@ header.main nav a.on {
   margin-bottom: 36px;
 }
 .journey-label {
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -578,7 +590,7 @@ header.main nav a.on {
   align-items: center;
 }
 .journey-photo {
-  aspect-ratio: 5 / 3;
+  aspect-ratio: 4/ 3;
   overflow: hidden;
   border-radius: 12px;
   background: var(--cream);
@@ -602,7 +614,9 @@ header.main nav a.on {
   display: block;
   margin-bottom: 10px;
   color: var(--ink);
-  font: 800 clamp(1.5rem, 3vw, 2.5rem) / 1.05 system-ui, sans-serif;
+  font:
+    800 clamp(1.5rem, 3vw, 2.5rem) / 1.05 system-ui,
+    sans-serif;
   letter-spacing: -0.04em;
   overflow-wrap: anywhere;
 }
@@ -652,17 +666,19 @@ header.main nav a.on {
   overflow: hidden;
   aspect-ratio: 4/3;
   margin: 0;
-  border: 1px solid rgba(255, 255, 255, .7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 14px;
   background: var(--ink);
-  box-shadow: 0 8px 24px rgba(0, 24, 72, .12);
+  box-shadow: 0 8px 24px rgba(6, 14, 33, 0.12);
   isolation: isolate;
 }
 .gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms ease, filter 500ms ease;
+  transition:
+    transform 500ms ease,
+    filter 500ms ease;
 }
 .gallery-card figcaption {
   position: absolute;
@@ -671,22 +687,25 @@ header.main nav a.on {
   flex-direction: column;
   gap: 2px;
   padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, .35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 10px;
-  background: rgba(0, 24, 72, .42);
-  color: #fff;
+  background: rgba(6, 14, 33, 0.42);
+  color: var(--white);
   opacity: 0;
   transform: translateY(10px);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: opacity 250ms ease, transform 250ms ease, background 250ms ease;
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease,
+    background 250ms ease;
 }
 .gallery-card figcaption span {
   font-size: 1.1rem;
   font-weight: 800;
 }
 .gallery-card figcaption small {
-  color: rgba(255, 255, 255, .85);
+  color: rgba(255, 255, 255, 0.85);
 }
 .gallery-card:hover img,
 .gallery-card:focus-within img {
@@ -697,7 +716,7 @@ header.main nav a.on {
 .gallery-card:focus-within figcaption {
   opacity: 1;
   transform: translateY(0);
-  background: rgba(0, 24, 72, .58);
+  background: rgba(6, 14, 33, 0.58);
 }
 .brand-grid {
   display: grid;
@@ -710,8 +729,8 @@ header.main nav a.on {
   justify-content: center;
   aspect-ratio: 3/2;
   padding: 18px;
-  background: #fff;
-  border: 1px solid #e1eaf2;
+  background: var(--white);
+  border: 1px solid var(--mist);
   border-radius: 6px;
 }
 .brand-logo img {
@@ -720,46 +739,47 @@ header.main nav a.on {
   object-fit: contain;
 }
 .client-name {
-  color: #001848;
+  color: var(--ink);
   font-size: 18px;
   font-weight: 700;
 }
 .testimonial {
-  color: #263445;
+  color: var(--text);
   font-size: 16px;
 }
 .cta {
   background: var(--ink);
-  color: #fff;
+  color: var(--white);
   text-align: center;
   padding: 80px 0;
 }
 .cta h2 {
-  color: #fff;
+  color: var(--white);
 }
 .cta p {
   margin-bottom: 26px;
-  color: #dce5ed;
+  color: var(--cream);
 }
 .stat {
   text-align: center;
   padding: 30px;
-  background: #fff;
-  border: 1px solid #e1eaf2;
+  background: var(--white);
+  border: 1px solid var(--mist);
 }
 .stat strong {
   display: block;
   font:
-    800 3rem system-ui, sans-serif;
+    800 3rem system-ui,
+    sans-serif;
   color: var(--gold);
 }
 .step {
   padding: 24px;
   border-top: 4px solid var(--gold);
-  background: #fff;
+  background: var(--white);
 }
 .step h3 {
-  color: var(--gold);
+  color: var(--gold-text);
 }
 .person {
   text-align: center;
@@ -777,7 +797,7 @@ select,
 textarea {
   font: inherit;
   padding: 0.8em;
-  border: 1px solid #dce5ed;
+  border: 1px solid var(--mist);
   border-radius: 6px;
   width: 100%;
 }
@@ -786,31 +806,31 @@ textarea {
 }
 .contact-enquiry {
   background: var(--ink);
-  color: #fff;
+  color: var(--white);
 }
 .contact-enquiry h2 {
-  color: #fff;
+  color: var(--white);
   font-size: 36px;
 }
 .contact-enquiry p {
-  color: #dce5ed;
+  color: var(--cream);
   font-size: 16px;
 }
 .contact-enquiry input,
 .contact-enquiry textarea {
-  background: #fff;
+  background: var(--white);
   color: var(--text);
 }
 .contact-enquiry .btn {
   background: var(--gold);
-  color: #fff;
+  color: var(--ink);
 }
 .contact-enquiry .btn:hover {
-  background: #00a8e8;
+  background: #a56f22;
 }
 footer {
-  background: #00102f;
-  color: #c9d5e4;
+  background: var(--ink);
+  color: var(--cream);
   padding: 60px 0 0;
 }
 footer h4 {
@@ -839,9 +859,9 @@ footer .social-links a {
   width: 38px;
   height: 38px;
   margin: 0;
-  border: 1px solid #5a6d8d;
+  border: 1px solid rgba(192, 135, 47, 0.55);
   border-radius: 50%;
-  color: #fff;
+  color: var(--white);
   transition:
     background-color 200ms ease,
     border-color 200ms ease,
@@ -861,7 +881,7 @@ footer .social-links svg {
   fill: currentColor;
 }
 footer .copy {
-  border-top: 1px solid #243b60;
+  border-top: 1px solid rgba(192, 135, 47, 0.35);
   margin-top: 40px;
   padding: 18px 0;
   text-align: center;
@@ -919,11 +939,11 @@ footer .copy {
     top: 76px;
     left: 0;
     right: 0;
-    background: #fff;
+    background: var(--white);
     flex-direction: column;
     padding: 20px;
     gap: 16px;
-    border-top: 1px solid #dce5ed;
+    border-top: 1px solid var(--mist);
   }
   header.main nav.open {
     display: flex;
@@ -941,7 +961,7 @@ footer .copy {
   .gallery-card figcaption {
     opacity: 1;
     transform: translateY(0);
-    background: rgba(0, 24, 72, .5);
+    background: rgba(6, 14, 33, 0.5);
   }
   .gallery-card:active img {
     transform: scale(1.04);

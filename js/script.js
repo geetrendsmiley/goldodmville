@@ -1,9 +1,5 @@
 const SITE = {
-<<<<<<< HEAD
-  name: "ODM Ville International",
-=======
   name: "ODM Ville Int",
->>>>>>> e9b0ef644946543d77bdaa34b05f58f611ddcad6
   phone: "+234 813 226 3555",
   email: "info@odmvilleagency.com",
   addr: "Lagos, Nigeria",
